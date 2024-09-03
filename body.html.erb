@@ -3,28 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auroville Network Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Auroville Community Dashboard</title>
     <style>
         :root {
-            --bg-color: #f1ece6;
-            --text-color: #333333;
-            --card-bg: #ffffff;
-            --card-border: #e0e0e0;
-            --primary-color: #e17055;
-            --secondary-color: #b7410e;
             --sidebar-bg: #2c3e50;
             --sidebar-text: #ecf0f1;
+            --primary-color: #e17055;
+            --secondary-color: #b7410e;
         }
 
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
             display: flex;
-            font-size: 14px;
         }
 
         .sidebar {
@@ -33,306 +25,114 @@
             color: var(--sidebar-text);
             padding: 20px;
             height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
             overflow-y: auto;
-            transition: all 0.3s ease;
         }
 
-        .sidebar .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .sidebar .logo img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .sidebar nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .sidebar nav li {
+        .sidebar-button {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
             margin-bottom: 10px;
-        }
-
-        .sidebar nav a {
-            color: var(--sidebar-text);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            padding: 10px;
+            background-color: #34495e;
+            color: white;
+            border: none;
             border-radius: 5px;
+            font-size: 16px;
+            text-align: left;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
-        .sidebar nav a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+        .sidebar-button:hover {
+            background-color: var(--primary-color);
         }
 
-        .sidebar nav i {
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
+        .sidebar-button:active {
+            background-color: var(--secondary-color);
         }
 
         .main-content {
             flex-grow: 1;
-            margin-left: 250px;
             padding: 20px;
-            transition: margin-left 0.3s ease;
+            background-color: #f1ece6;
         }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
+        .hero-section {
+            background-image: url('path_to_your_image.jpg');
+            background-size: cover;
+            color: white;
+            padding: 50px;
+            text-align: center;
         }
 
-        .search-bar input {
-            padding: 10px;
-            border: 1px solid var(--card-border);
-            border-radius: 5px;
-            width: 300px;
-        }
-
-        .user-menu {
-            display: flex;
-            align-items: center;
-        }
-
-        .user-menu img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .section-box {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .welcome-banner {
-            grid-column: 1 / -1;
+        .learn-more-btn {
             background-color: var(--primary-color);
             color: white;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .btn-learn-more {
-            display: inline-block;
-            background-color: white;
-            color: var(--primary-color);
             padding: 10px 20px;
+            border: none;
             border-radius: 5px;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
+            cursor: pointer;
         }
 
-        .btn-learn-more:hover {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .topic-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #f9f9f9;
+        .coding-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .topic-item:hover {
-            background-color: #f0f0f0;
-        }
-
-        .topic-item img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .topic-item .content {
-            flex-grow: 1;
-        }
-
-        .topic-item h3 {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        .topic-item p {
-            margin: 5px 0 0;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .topic-item a {
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .topic-item a:hover {
-            color: var(--primary-color);
-        }
-
-        .quote {
-            font-style: italic;
-            text-align: center;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 60px;
-                padding: 10px;
-            }
-
-            .sidebar .logo img {
-                display: none;
-            }
-
-            .sidebar nav a span {
-                display: none;
-            }
-
-            .main-content {
-                margin-left: 60px;
-            }
-
-            .search-bar input {
-                width: 200px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
-        <div class="logo">
-            <img src="https://aurovillenetwork.org/uploads/default/original/1X/99e32f00cb6f0520758dd2efd953b3628be0efe3.png" alt="Auroville Community Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
-                <li><a href="#"><i class="fas fa-home"></i> <span>Homepage</span></a></li>
-                <li><a href="#"><i class="fas fa-bullhorn"></i> <span>Announcements</span></a></li>
-                <li><a href="#"><i class="fas fa-calendar-alt"></i> <span>Events</span></a></li>
-                <li><a href="#"><i class="fas fa-comments"></i> <span>Forums</span></a></li>
-                <li><a href="#"><i class="fas fa-users"></i> <span>Social</span></a></li>
-                <li><a href="#"><i class="fas fa-address-book"></i> <span>Directory</span></a></li>
-                <li><a href="#"><i class="fas fa-book"></i> <span>References</span></a></li>
-                <li><a href="#"><i class="fas fa-question-circle"></i> <span>Help Center</span></a></li>
-            </ul>
-        </nav>
+        <button class="sidebar-button">Dashboard</button>
+        <button class="sidebar-button">Homepage</button>
+        <button class="sidebar-button">Announcements</button>
+        <button class="sidebar-button">Events</button>
+        <button class="sidebar-button">Forums</button>
+        <button class="sidebar-button">Social</button>
+        <button class="sidebar-button">Directory</button>
+        <button class="sidebar-button">References</button>
+        <button class="sidebar-button">Help Center</button>
+        <button class="sidebar-button">Logout</button>
     </div>
     <div class="main-content">
-        <div class="header">
-            <div class="search-bar">
-                <input type="text" placeholder="Search everything...">
-            </div>
-            <div class="user-menu">
-                <img src="https://via.placeholder.com/40" alt="User Avatar">
-                <span>Anonymous Admin</span>
-            </div>
+        <div class="hero-section">
+            <h1>Auroville gets a new community platform</h1>
+            <p>Auronet needed a revamp. It was taken over and heavily censored in June 2022. Many residents have been asking for an alternative: finally, here it is!</p>
+            <button class="learn-more-btn">Learn more</button>
         </div>
-        <div class="dashboard-grid">
-            <div class="welcome-banner">
-                <h2>Welcome to the Auroville Community platform!</h2>
-                <p>We hope this can become a space for true connection, in a spirit of respect and mutuality.</p>
-                <a href="/learn-more" class="btn-learn-more">Learn more</a>
-            </div>
-            <section class="latest-announcements section-box">
-                <h2>Latest Announcements</h2>
-                <div id="announcements-content">
-                    <!-- Announcements will be dynamically inserted here -->
-                </div>
-            </section>
-            <section class="quote section-box">
-                <h2>"All's miracle and can by miracle change."</h2>
-                <p>BOOK I, CANTO II</p>
-            </section>
-            <section class="featured-video section-box">
-                <h2>Featured Video</h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Kqz56TrKDRk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-            </section>
-            <section class="whos-online section-box">
-                <h2>Who's Online</h2>
-                <!-- Online users will be dynamically inserted here -->
-            </section>
-            <section class="recent-topics section-box">
-                <h2>Recent Topics</h2>
-                <!-- Recent topics will be dynamically inserted here -->
-            </section>
-            <section class="forum-statistics section-box">
-                <h2>Forum Statistics</h2>
-                <!-- Forum statistics will be dynamically inserted here -->
-            </section>
+        <div class="coding-section">
+            <h2>Why Use this new Intranet Platform?</h2>
+            <h3>3 SIMPLE REASONS</h3>
+            <p>As we build our community platform, we're also embracing the world of coding. Here's why learning to code can be beneficial:</p>
+            <ul>
+                <li>It enhances problem-solving skills</li>
+                <li>It opens up new career opportunities</li>
+                <li>It allows for creative expression through technology</li>
+            </ul>
+            <p>If you're interested in contributing to our platform or learning coding yourself, here are some tips to get started:</p>
+            <ol>
+                <li>Figure out why you want to learn to code</li>
+                <li>Choose a coding language to start with (HTML and CSS are great for beginners)</li>
+                <li>Take online courses or watch video tutorials</li>
+                <li>Practice by completing coding projects</li>
+                <li>Join a coding community for support and mentorship</li>
+            </ol>
+            <p>Remember, coding is more than just writing code – it's about problem-solving and thinking like a computer. With dedication and practice, anyone can learn to code!</p>
         </div>
     </div>
 
     <script>
-        // Sample data for announcements
-        const announcements = [
-            { title: "Community Meeting", date: "2023-06-15", replies: 5, avatar: "https://via.placeholder.com/40" },
-            { title: "New Sustainability Initiative", date: "2023-06-14", replies: 12, avatar: "https://via.placeholder.com/40" },
-            { title: "Volunteer Opportunities", date: "2023-06-13", replies: 3, avatar: "https://via.placeholder.com/40" },
-        ];
-
-        // Function to populate announcements
-        function populateAnnouncements() {
-            const container = document.getElementById('announcements-content');
-            announcements.forEach(announcement => {
-                const item = document.createElement('div');
-                item.className = 'topic-item';
-                item.innerHTML = `
-                    <img src="${announcement.avatar}" alt="User Avatar">
-                    <div class="content">
-                        <h3><a href="#">${announcement.title}</a></h3>
-                        <p>${announcement.date} • ${announcement.replies} replies</p>
-                    </div>
-                `;
-                container.appendChild(item);
+        document.querySelectorAll('.sidebar-button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert(`You clicked on ${this.textContent}`);
+                // Here you can add functionality to navigate to different sections
             });
-        }
+        });
 
-        // Call the function when the page loads
-        window.onload = populateAnnouncements;
+        document.querySelector('.learn-more-btn').addEventListener('click', function() {
+            window.location.href = '/learn-more';  // Replace with actual URL
+        });
     </script>
 </body>
 </html>
