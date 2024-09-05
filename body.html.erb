@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auroville Community</title>
+    <title>Auroville Community Portal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
+            background-color: #f1ece6;
         }
 
         .sidebar {
@@ -18,6 +19,8 @@
             color: #ecf0f1;
             padding: 20px;
             height: 100vh;
+            position: fixed;
+            overflow-y: auto;
         }
 
         .sidebar .logo {
@@ -26,9 +29,10 @@
         }
 
         .sidebar-button {
-            display: block;
+            display: flex;
+            align-items: center;
             width: 100%;
-            padding: 10px 15px;
+            padding: 12px 15px;
             margin-bottom: 10px;
             background-color: #34495e;
             color: #ecf0f1;
@@ -37,12 +41,51 @@
             text-align: left;
             cursor: pointer;
             text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar-button:hover {
+            background-color: #2980b9;
+        }
+
+        .sidebar-button i {
+            margin-right: 10px;
         }
 
         .main-content {
             flex-grow: 1;
             padding: 20px;
-            background-color: #f1ece6;
+            margin-left: 250px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .quick-links {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .quick-link {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            flex-basis: 23%;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .quick-link:hover {
+            background-color: #2980b9;
         }
 
         .card {
@@ -52,10 +95,11 @@
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .card-image {
-            width: 150px;
+            width: 100px;
             margin-right: 20px;
         }
 
@@ -70,13 +114,18 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #d35400;
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <div class="logo">
-            <img src="https://aurovillenetwork.org/uploads/default/original/1X/99e32f00cb6f0520758dd2efd953b3628be0efe3.png" alt="Auroville Community Logo">
+            <img src="https://aurovillenetwork.org/uploads/default/original/1X/99e32f00cb6f0520758dd2efd953b3628be0efe3.png" alt="Auroville Community Logo" style="max-width: 100%;">
         </div>
         <a href="https://aurovillenetwork.org/u/lucas/activity" class="sidebar-button"><i class="icon-dashboard"></i> Dashboard</a>
         <a href="https://aurovillenetwork.org/c/announcements/5" class="sidebar-button"><i class="icon-announcement"></i> Announcements</a>
@@ -88,11 +137,18 @@
         <a href="#" class="sidebar-button"><i class="icon-help"></i> Help Center</a>
     </div>
     <div class="main-content">
+        <input type="text" class="search-bar" placeholder="Search for events, forums, or community resources...">
+        <div class="quick-links">
+            <a href="#" class="quick-link">Latest News</a>
+            <a href="#" class="quick-link">Upcoming Events</a>
+            <a href="#" class="quick-link">Community Projects</a>
+            <a href="#" class="quick-link">Get Involved</a>
+        </div>
         <div class="card">
             <img src="calendar-icon.png" alt="Calendar" class="card-image">
             <div class="card-content">
                 <h2>Events Calendar</h2>
-                <p>Auroville has a lot going on. It's not always easy to follow. Thanks to our calendar, you can make sure you won't miss the events which speak to you.</p>
+                <p>Stay up-to-date with all the exciting events happening in Auroville. Our easy-to-use calendar helps you find and attend the events that interest you most.</p>
                 <button class="button">View all events</button>
             </div>
         </div>
@@ -100,8 +156,16 @@
             <img src="forum-icon.png" alt="Forum" class="card-image">
             <div class="card-content">
                 <h2>Community Forums</h2>
-                <p>Auroville is a collective adventure. Discussing respectfully among ourselves is healthy - and we have designed a platform to facilitate this.</p>
+                <p>Join the conversation! Our community forums provide a space for respectful discussion on various topics related to Auroville and its development.</p>
                 <button class="button">Join the discussion</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="directory-icon.png" alt="Directory" class="card-image">
+            <div class="card-content">
+                <h2>Auroville Directory</h2>
+                <p>Find contact information for Auroville's services, businesses, and residents quickly and easily with our comprehensive directory.</p>
+                <button class="button">Access Directory</button>
             </div>
         </div>
     </div>
