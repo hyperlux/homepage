@@ -1,9 +1,7 @@
 {
   "name": "homepage",
-  "path": "homepage"
-
+  "path": "homepage",
+  "header": {
+    "root": "/welcome"
+  }
 }
-
-"header": {
-  "root": "/welcome"
-},
