@@ -59,16 +59,17 @@
         .sidebar-button {
             display: block;
             width: 100%;
-            padding: 20px 25px;
-            margin-bottom: 15px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
             background-color: #34495e;
-            color: white;
+            color: var(--sidebar-text);
             border: none;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 16px;
             text-align: left;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-decoration: none;
         }
 
         .sidebar-button:hover {
@@ -100,6 +101,13 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            background-color: var(--secondary-color);
         }
 
         .coding-section {
@@ -112,28 +120,26 @@
 </head>
 <body>
     <div class="sidebar">
-    <div class="logo">
-    <img src="https://aurovillenetwork.org/uploads/default/original/1X/99e32f00cb6f0520758dd2efd953b3628be0efe3.png" alt="Auroville Community Logo">
-    </div>
+        <div class="logo">
+            <img src="https://aurovillenetwork.org/uploads/default/original/1X/99e32f00cb6f0520758dd2efd953b3628be0efe3.png" alt="Auroville Community Logo">
+        </div>
         <nav>
-            <ul>
-                <li><a href="#"><i class="icon-dashboard"></i> Dashboard</a></li>
-                <li><a href="#"><i class="icon-home"></i> Homepage</a></li>
-                <li><a href="#"><i class="icon-announcement"></i> Announcements</a></li>
-                <li><a href="#"><i class="icon-event"></i> Events</a></li>
-                <li><a href="#"><i class="icon-forum"></i> Forums</a></li>
-                <li><a href="#"><i class="icon-social"></i> Social</a></li>
-                <li><a href="#"><i class="icon-directory"></i> Directory</a></li>
-                <li><a href="#"><i class="icon-references"></i> References</a></li>
-                <li><a href="#"><i class="icon-help"></i> Help Center</a></li>
-            </ul>
+            <a href="#" class="sidebar-button"><i class="icon-dashboard"></i> Dashboard</a>
+            <a href="#" class="sidebar-button"><i class="icon-home"></i> Homepage</a>
+            <a href="#" class="sidebar-button"><i class="icon-announcement"></i> Announcements</a>
+            <a href="#" class="sidebar-button"><i class="icon-event"></i> Events</a>
+            <a href="#" class="sidebar-button"><i class="icon-forum"></i> Forums</a>
+            <a href="#" class="sidebar-button"><i class="icon-social"></i> Social</a>
+            <a href="#" class="sidebar-button"><i class="icon-directory"></i> Directory</a>
+            <a href="#" class="sidebar-button"><i class="icon-references"></i> References</a>
+            <a href="#" class="sidebar-button"><i class="icon-help"></i> Help Center</a>
         </nav>
     </div>
     <div class="main-content">
         <div class="hero-section">
             <h1>Auroville gets a new community platform</h1>
             <p>Auronet needed a revamp. It was taken over and heavily censored in June 2022. Many residents have been asking for an alternative: finally, here it is!</p>
-            <button class="learn-more-btn">Learn more</button>
+            <a href="/learn-more" class="learn-more-btn">Learn more</a>
         </div>
         <div class="coding-section">
             <h2>Why Use this new Intranet Platform?</h2>
@@ -158,14 +164,11 @@
 
     <script>
         document.querySelectorAll('.sidebar-button').forEach(button => {
-            button.addEventListener('click', function() {
-                alert(`You clicked on ${this.textContent}`);
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert(`You clicked on ${this.textContent.trim()}`);
                 // Here you can add functionality to navigate to different sections
             });
-        });
-
-        document.querySelector('.learn-more-btn').addEventListener('click', function() {
-            window.location.href = '/learn-more';  // Replace with actual URL
         });
     </script>
 </body>
