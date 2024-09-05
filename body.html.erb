@@ -144,19 +144,7 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="https://aurovillenetwork.org/uploads/default/original/1X/99e32f00cb6f0520758dd2efd953b3628be0efe3.png" alt="Auroville Community Logo" class="logo">
-        <nav class="nav">
-            <a href="https://aurovillenetwork.org/u/lucas/activity" class="nav-button">Dashboard</a>
-            <a href="https://aurovillenetwork.org/c/announcements/5" class="nav-button">Announcements</a>
-            <a href="https://aurovillenetwork.org/c/events/13" class="nav-button">Events</a>
-            <a href="https://aurovillenetwork.org/categories" class="nav-button">Categories</a>
-            <a href="#" class="nav-button">Social</a>
-            <a href="https://directory.auroville.services/" class="nav-button">Directory</a>
-            <a href="#" class="nav-button">References</a>
-            <a href="#" class="nav-button">Help Center</a>
-        </nav>
-    </div>
+    <%= render partial: 'landing_pages/landing/header' %>
     <div class="container">
         <input type="text" class="search-bar" placeholder="Search for events, forums, or community resources...">
         <div class="quick-links">
@@ -189,6 +177,8 @@
                 <button class="button">Access Directory</button>
             </div>
         </div>
+        <%= render partial: 'landing_pages/landing/contact_form' %>
     </div>
+    <%= render partial: 'landing_pages/landing/footer' %>
 </body>
 </html>
