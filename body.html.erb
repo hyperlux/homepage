@@ -1,35 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="desktop-view not-mobile-device text-size-larger">
-  <head>
-    <meta charset="utf-8">
-    <title>Auroville Community - Where dreams meet reality</title>
-    <meta name="description" content="A hub for dreamers and doers alike, all united in pursuit of a harmonious future.">
-    <meta name="discourse_theme_id" content="15">
-    <meta name="discourse_current_homepage" content="latest">
-
-    <meta name="generator" content="Discourse 3.4.0.beta2-dev - https://github.com/discourse/discourse version 7b89fdead98606d4f47ceb0a1d240d0f6e5f589e">
-<link rel="icon" type="image/png" href="https://aurovillenetwork.org/uploads/default/optimized/1X/e19c6cc451859e849a6ea8fe5bc4bcceeff054f7_2_32x32.png">
-<link rel="apple-touch-icon" type="image/png" href="https://aurovillenetwork.org/uploads/default/optimized/1X/60223ad4a4359dc7738d8ac2dc94c8dd4b8f0599_2_180x180.jpeg">
-<meta name="theme-color" media="all" content="#111111">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<link rel="canonical" href="https://aurovillenetwork.org/" />
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://aurovillenetwork.org","name":"Auroville Community","potentialAction":{"@type":"SearchAction","target":"https://aurovillenetwork.org/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<link rel="search" type="application/opensearchdescription+xml" href="https://aurovillenetwork.org/opensearch.xml" title="Auroville Community Search">
-
-    <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="6GIWx-3nYvw9FUBAa6_oHp-L5PjZSPEX5NmsWrd3zfWsWmY5BL95se4_2tQaDuNMxNnbyX9QuUpknvmdgLvKyA" />
-
-      <meta name="fragment" content="!">
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auroville Community</title>
     <style>
-        :root {
-            --sidebar-bg: #2c3e50;
-            --sidebar-text: #ecf0f1;
-            --primary-color: #e17055;
-            --secondary-color: #b7410e;
-        }
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -39,21 +14,15 @@
 
         .sidebar {
             width: 250px;
-            background-color: var(--sidebar-bg);
-            color: var(--sidebar-text);
+            background-color: #2c3e50;
+            color: #ecf0f1;
             padding: 20px;
             height: 100vh;
-            overflow-y: auto;
         }
 
         .sidebar .logo {
             text-align: center;
             margin-bottom: 20px;
-        }
-
-        .sidebar .logo img {
-            max-width: 100%;
-            height: auto;
         }
 
         .sidebar-button {
@@ -62,22 +31,12 @@
             padding: 10px 15px;
             margin-bottom: 10px;
             background-color: #34495e;
-            color: var(--sidebar-text);
+            color: #ecf0f1;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
             text-align: left;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             text-decoration: none;
-        }
-
-        .sidebar-button:hover {
-            background-color: var(--primary-color);
-        }
-
-        .sidebar-button:active {
-            background-color: var(--secondary-color);
         }
 
         .main-content {
@@ -86,35 +45,31 @@
             background-color: #f1ece6;
         }
 
-        .hero-section {
-            background-image: url('path_to_your_image.jpg');
-            background-size: cover;
-            color: white;
-            padding: 50px;
-            text-align: center;
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
 
-        .learn-more-btn {
-            background-color: var(--primary-color);
+        .card-image {
+            width: 150px;
+            margin-right: 20px;
+        }
+
+        .card-content {
+            flex-grow: 1;
+        }
+
+        .button {
+            background-color: #e67e22;
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .learn-more-btn:hover {
-            background-color: var(--secondary-color);
-        }
-
-        .coding-section {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
         }
     </style>
 </head>
@@ -123,52 +78,32 @@
         <div class="logo">
             <img src="https://aurovillenetwork.org/uploads/default/original/1X/99e32f00cb6f0520758dd2efd953b3628be0efe3.png" alt="Auroville Community Logo">
         </div>
-        <nav>
-            <a href="https://aurovillenetwork.org/u/lucas/activity" class="sidebar-button"><i class="icon-dashboard"></i> Dashboard</a>
-            <a href="https://aurovillenetwork.org/c/announcements/5" class="sidebar-button"><i class="icon-announcement"></i> Announcements</a>
-            <a href="https://aurovillenetwork.org/c/events/13" class="sidebar-button"><i class="icon-event"></i> Events</a>
-            <a href="https://aurovillenetwork.org/categories" class="sidebar-button"><i class="icon-forum"></i> Categories</a>
-            <a href="#" class="sidebar-button"><i class="icon-social"></i> Social</a>
-            <a href="https://directory.auroville.services/" class="sidebar-button"><i class="icon-directory"></i> Directory</a>
-            <a href="#" class="sidebar-button"><i class="icon-references"></i> References</a>
-            <a href="#" class="sidebar-button"><i class="icon-help"></i> Help Center</a>
-        </nav>
+        <a href="https://aurovillenetwork.org/u/lucas/activity" class="sidebar-button"><i class="icon-dashboard"></i> Dashboard</a>
+        <a href="https://aurovillenetwork.org/c/announcements/5" class="sidebar-button"><i class="icon-announcement"></i> Announcements</a>
+        <a href="https://aurovillenetwork.org/c/events/13" class="sidebar-button"><i class="icon-event"></i> Events</a>
+        <a href="https://aurovillenetwork.org/categories" class="sidebar-button"><i class="icon-forum"></i> Categories</a>
+        <a href="#" class="sidebar-button"><i class="icon-social"></i> Social</a>
+        <a href="https://directory.auroville.services/" class="sidebar-button"><i class="icon-directory"></i> Directory</a>
+        <a href="#" class="sidebar-button"><i class="icon-references"></i> References</a>
+        <a href="#" class="sidebar-button"><i class="icon-help"></i> Help Center</a>
     </div>
     <div class="main-content">
-        <div class="hero-section">
-            <h1>Auroville gets a new community platform</h1>
-            <p>Auronet needed a revamp. It was taken over and heavily censored in June 2022. Many residents have been asking for an alternative: finally, here it is!</p>
-            <a href="/learn-more" class="learn-more-btn">Learn more</a>
+        <div class="card">
+            <img src="calendar-icon.png" alt="Calendar" class="card-image">
+            <div class="card-content">
+                <h2>Events Calendar</h2>
+                <p>Auroville has a lot going on. It's not always easy to follow. Thanks to our calendar, you can make sure you won't miss the events which speak to you.</p>
+                <button class="button">View all events</button>
+            </div>
         </div>
-        <div class="coding-section">
-            <h2>Why Use this new Intranet Platform?</h2>
-            <h3>3 SIMPLE REASONS</h3>
-            <p>As we build our community platform, we're also embracing the world of coding. Here's why learning to code can be beneficial:</p>
-            <ul>
-                <li>It enhances problem-solving skills</li>
-                <li>It opens up new career opportunities</li>
-                <li>It allows for creative expression through technology</li>
-            </ul>
-            <p>If you're interested in contributing to our platform or learning coding yourself, here are some tips to get started:</p>
-            <ol>
-                <li>Figure out why you want to learn to code</li>
-                <li>Choose a coding language to start with (HTML and CSS are great for beginners)</li>
-                <li>Take online courses or watch video tutorials</li>
-                <li>Practice by completing coding projects</li>
-                <li>Join a coding community for support and mentorship</li>
-            </ol>
-            <p>Remember, coding is more than just writing code – it's about problem-solving and thinking like a computer. With dedication and practice, anyone can learn to code!</p>
+        <div class="card">
+            <img src="forum-icon.png" alt="Forum" class="card-image">
+            <div class="card-content">
+                <h2>Community Forums</h2>
+                <p>Auroville is a collective adventure. Discussing respectfully among ourselves is healthy - and we have designed a platform to facilitate this.</p>
+                <button class="button">Join the discussion</button>
+            </div>
         </div>
     </div>
-
-    <script>
-        document.querySelectorAll('.sidebar-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                alert(`You clicked on ${this.textContent.trim()}`);
-                // Here you can add functionality to navigate to different sections
-            });
-        });
-    </script>
 </body>
 </html>
